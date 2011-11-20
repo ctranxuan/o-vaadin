@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  version="2.4"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+
+  <display-name>vaadin-modules-dm</display-name>
+
+  <description>Roo generated opizzashop application</description>
+
+
+  <!-- Vaadin production mode -->
+  <context-param>
+    <param-name>productionMode</param-name>
+    <param-value>false</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath*:spring/*.xml</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>contextClass</param-name>
+    <param-value>org.eclipse.virgo.web.dm.ServerOsgiBundleXmlWebApplicationContext</param-value>
+  </context-param>
+
+  <!-- Creates the Spring Container shared by all Servlets and Filters -->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <listener>  
+    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>  
+  </listener>
+ 
+  <servlet>
+    <servlet-name>Vaadin Modules Spring DM Application Servlet</servlet-name>
+    <servlet-class>org.ws13.vaadin.osgi.dm.app.SpringApplicationServlet</servlet-class>
+    <init-param>
+      <param-name>applicationBeanName</param-name>
+      <param-value>app</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Vaadin Modules Spring DM Application Servlet</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
+</web-app>

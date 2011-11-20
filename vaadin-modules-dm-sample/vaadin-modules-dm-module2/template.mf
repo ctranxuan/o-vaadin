@@ -1,0 +1,11 @@
+Bundle-ManifestVersion: 2
+Bundle-Name:  ${project.name}
+Bundle-SymbolicName: ${project.groupId}.${project.artifactId}
+Bundle-Version: ${project.version}
+Bundle-Description: ${bundle.description}
+Spring-Context: META-INF/spring/*.xml;wait-for-dependencies:=true;publish-context:=false;
+Import-Library: 
+ org.springframework.spring;version="${osgi.springframework.range.version}"
+Import-Template: 
+  com.vaadin.*;version="${osgi.vaadin.range.version}",
+ org.ws13.vaadin.osgi.dm.services.*;version="${vaadin.dm.service.version:[=.=.=,=.+1)}"

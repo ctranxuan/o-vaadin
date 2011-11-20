@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ${project.artifactId}
+Bundle-Version: ${project.version}
+Bundle-SymbolicName: ${project.groupId}.${project.artifactId}
+Bundle-Classpath: WEB-INF/classes,WEB-INF/lib
+Import-Library: 
+ org.springframework.spring;version="${osgi.springframework.range.version}"
+Web-ContextPath: vaadin-modules-dm
+Spring-Context: META-INF/spring/*.xml;wait-for-dependencies:=true;publish-context:=false;
+Import-Template: 
+ com.vaadin.*;version="${osgi.vaadin.range.version}"
+Import-Package: 
+ org.eclipse.virgo.web.dm
+ 

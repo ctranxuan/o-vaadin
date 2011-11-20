@@ -1,0 +1,193 @@
+<!--
+  Copyright 2011 ctranxuan
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+    http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.ws13.vaadin.osgi.dm</groupId>
+  <artifactId>vaadin-modules-dm-sample</artifactId>
+  <version>0.0.1.BUILD-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Vaadin Modules Spring DM Sample</name>
+  <description>Spring DM version of the Vaadin OSGi sample (https://vaadin.com/wiki/-/wiki/Main/Creating%20a%20Modular%20Vaadin%20Application%20with%20OSGi)</description>
+
+  <inceptionYear>2011</inceptionYear>
+
+  <developers>
+    <developer>
+      <id>ctranxuan</id>
+    </developer>
+  </developers>
+
+  <!-- Global properties -->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <springframework.version>3.0.6.RELEASE</springframework.version>
+    <vaadin.version>6.6.7</vaadin.version>
+    
+    <osgi.springframework.range.version>${springframework.version:[=.=,=.+1)}</osgi.springframework.range.version>
+    <osgi.vaadin.range.version>${vaadin.version:[0.0.0, +1)}</osgi.vaadin.range.version>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>com.springsource.repository.bundles.release</id>
+      <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
+      <url>http://repository.springsource.com/maven/bundles/release</url>
+    </repository>
+    <repository>
+      <id>com.springsource.repository.bundles.external</id>
+      <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+      <url>http://repository.springsource.com/maven/bundles/external</url>
+    </repository>
+    <repository>
+      <id>com.springsource.repository.bundles.milestone</id>
+      <name>SpringSource Enterprise Bundle Repository - External Bundle Milestones</name>
+      <url>http://repository.springsource.com/maven/bundles/milestone</url>
+    </repository>
+    <!-- required for some plugins that depend on snapshots -->
+    <repository>
+      <id>com.springsource.repository.bundles.snapshot</id>
+      <name>SpringSource Enterprise Bundle Repository - External Bundle Snapshots</name>
+      <url>http://repository.springsource.com/maven/bundles/snapshot</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>com.springsource.repository.bundles.release</id>
+      <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
+      <url>http://repository.springsource.com/maven/bundles/release</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>com.springsource.repository.bundles.external</id>
+      <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+      <url>http://repository.springsource.com/maven/bundles/external</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>com.springsource.repository.bundles.milestone</id>
+      <name>SpringSource Enterprise Bundle Repository - External Bundle Milestones</name>
+      <url>http://repository.springsource.com/maven/bundles/milestone</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>com.springsource.bundlor</groupId>
+          <artifactId>com.springsource.bundlor.maven</artifactId>
+          <version>1.0.0.RELEASE</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>maven-bundle-plugin</artifactId>
+          <version>2.3.5</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>2.3.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.7</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.3.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>2.3.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.2.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>2.5</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.10</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>2.1.1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <encoding>UTF-8</encoding>
+          <optimize>true</optimize>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.vaadin</groupId>
+        <artifactId>vaadin</artifactId>
+        <version>6.7.1</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>2.5</version>
+      </dependency>
+      <dependency>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.compendium</artifactId>
+        <version>4.2.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.core</artifactId>
+        <version>4.2.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>${springframework.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  
+  <modules>
+    <module>vaadin-modules-dm-service</module>
+    <module>vaadin-modules-dm-module1</module>
+    <module>vaadin-modules-dm-module2</module>
+    <module>vaadin-modules-dm-module3</module>
+    <module>vaadin-modules-dm-app</module>
+  </modules>
+</project>
