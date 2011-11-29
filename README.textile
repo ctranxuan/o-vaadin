@@ -33,7 +33,7 @@ vaadin.type=watched
 vaadin.watchDirectory=repository/vaadin
 chain=ext,usr,vaadin
 
-* deploy the vaadin-modules-xxx bundles into Virgo. You can either do it via Eclipse Virgo Tools or manually by copying the bundles under $VIRGO_HOME/pickup. Ensures that you deploy the @vaadin-modules-dm-app@ at the end.
+* deploy the vaadin-modules-xxx bundles into Virgo. You can either do it via Eclipse Virgo Tools or manually by copying the bundles under @$VIRGO_HOME/pickup@. Ensures that you deploy the @vaadin-modules-dm-app@ at the end.
 
 * open a browser with the url "localhost:8080/vaadin-modules-dm":localhost:8080/vaadin-modules-dm
 
