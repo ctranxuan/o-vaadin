@@ -1,0 +1,46 @@
+
+h1. vaadin-modules-dm-sample
+
+h2. Intro 
+
+p. This project is based on the article of "Creating a Modular Vaadin Application with OSGi":https://vaadin.com/wiki/-/wiki/Main/Creating%20a%20Modular%20Vaadin%20Application%20with%20OSGi from Petter Holmström. But its OSGi target is Spring DM.
+
+p. Pre-requisites:
+
+* Java 6+
+* Maven 2/3
+* Virgo 3.0.1+
+
+p. The code has been tested against Virgo 3.0.1.RELEASE through Spring STS + Virgo Tools.
+
+h2. How to run
+
+p. First, you need to build the project. It's a maven project: you just have to run @mvn clean install@ under @vaadin-modules-dm-sample@ project.
+
+p. You then need to deploy the bundles in a Virgo instance: 
+
+* deploy the Vaadin bundle (the one used in the pom.xml) in a Virgo repository. You can create your own one. Let's assume VIRGO_HOME is the home of Virgo.
+
+bq. 
+cd $VIRGO_HOME/repository
+mkdir vaadin
+cp $HOME/vaadin-6.7.1.jar $VIRGO_HOME/repository/vaadin
+
+* update the Virgo configuration to take into account the new repository. Edit the file $VIRGO_HOME/config/org.eclipse.virgo.repository.properties with the following modifications:
+
+bq. 
+vaadin.type=watched
+vaadin.watchDirectory=repository/vaadin
+chain=ext,usr,vaadin
+
+* deploy the vaadin-modules-xxx bundles into Virgo. You can either do it via Eclipse Virgo Tools or manually by copying the bundles under $VIRGO_HOME/pickup. Ensures that you deploy the @vaadin-modules-dm-app@ at the end.
+
+* open a browser with the url "localhost:8080/vaadin-modules-dm":localhost:8080/vaadin-modules-dm
+
+
+h2. Few notes
+
+p. The design of the sample is a little bit different from the one described in the article. Indeed, the @Module@ implementations do not have a reference of the @ModuleService@ but the @ModuleService@ detects the arrival and the departure of @Module@ services (thanks to the WhiteBoard pattern). This decouples the @Module@ from the @ModuleService@. Furthermore, the solution of the article lets assume that only one @ModuleService@ can be deployed in the OSGi runtime to be sure all the @Module@ register in the same @ModuleService@. This is not safe since several @ModuleService@ could be deployed in the OSGi runtime. That's why this sample prefers the WhiteBoard pattern approach.
+ 
+
+
