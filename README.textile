@@ -3,7 +3,7 @@ h1. vaadin-modules-dm-sample
 
 h2. Intro 
 
-p. This project is based on the article of "Creating a Modular Vaadin Application with OSGi":https://vaadin.com/wiki/-/wiki/Main/Creating%20a%20Modular%20Vaadin%20Application%20with%20OSGi from Petter Holmström. But its OSGi target is Spring DM.
+p. This project is based on the article of "Creating a Modular Vaadin Application with OSGi":https://vaadin.com/wiki/-/wiki/Main/Creating%20a%20Modular%20Vaadin%20Application%20with%20OSGi from Petter Holmström. But its OSGi target is *Spring DM* .
 
 p. Pre-requisites:
 
@@ -26,7 +26,7 @@ cd $VIRGO_HOME/repository
 mkdir vaadin
 cp $HOME/vaadin-6.7.1.jar $VIRGO_HOME/repository/vaadin
 
-* update the Virgo configuration to take into account the new repository. Edit the file $VIRGO_HOME/config/org.eclipse.virgo.repository.properties with the following modifications:
+* update the Virgo configuration to take into account the new repository. Edit the file @$VIRGO_HOME/config/org.eclipse.virgo.repository.properties@ with the following modifications:
 
 bq. 
 vaadin.type=watched
@@ -40,7 +40,7 @@ chain=ext,usr,vaadin
 
 h2. Few notes
 
-p. The design of the sample is a little bit different from the one described in the article. Indeed, the @Module@ implementations do not have a reference of the @ModuleService@ but the @ModuleService@ detects the arrival and the departure of @Module@ services (thanks to the WhiteBoard pattern). This decouples the @Module@ from the @ModuleService@. Furthermore, the solution of the article lets assume that only one @ModuleService@ can be deployed in the OSGi runtime to be sure all the @Module@ register in the same @ModuleService@. This is not safe since several @ModuleService@ could be deployed in the OSGi runtime. That's why this sample prefers the WhiteBoard pattern approach.
+p. The design of the sample is a little bit different from the one described in the article. Indeed, the @Module@ implementations do not have a reference of the @ModuleService@ but the @ModuleService@ detects the arrival and the departure of @Module@ services (thanks to the *WhiteBoard pattern* ). This decouples the @Module@ from the @ModuleService@. Furthermore, the solution of the article lets assume that only one @ModuleService@ can be deployed in the OSGi runtime to be sure all the @Module@ register in the same @ModuleService@. This is not safe since several @ModuleService@ could be deployed in the OSGi runtime. That's why this sample prefers the WhiteBoard pattern approach.
  
 
 
