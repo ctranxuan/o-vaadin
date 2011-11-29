@@ -1,4 +1,3 @@
-
 h1. vaadin-modules-dm-sample
 
 h2. Intro 
@@ -9,7 +8,7 @@ p. Pre-requisites:
 
 * Java 6+
 * Maven 2/3
-* Virgo 3.0.1+
+* "Virgo 3.0.1+":http://eclipse.org/virgo/
 
 p. The code has been tested against Virgo 3.0.1.RELEASE through Spring STS + Virgo Tools.
 
@@ -33,7 +32,7 @@ vaadin.type=watched
 vaadin.watchDirectory=repository/vaadin
 chain=ext,usr,vaadin
 
-* deploy the vaadin-modules-xxx bundles into Virgo. You can either do it via Eclipse Virgo Tools or manually by copying the bundles under $VIRGO_HOME/pickup. Ensures that you deploy the @vaadin-modules-dm-app@ at the end.
+* deploy the vaadin-modules-xxx bundles into Virgo. You can either do it via Eclipse Virgo Tools or manually by copying the bundles under @$VIRGO_HOME/pickup@. Ensures that you deploy the @vaadin-modules-dm-app@ at the end.
 
 * open a browser with the url "localhost:8080/vaadin-modules-dm":localhost:8080/vaadin-modules-dm
 
@@ -42,5 +41,3 @@ h2. Few notes
 
 p. The design of the sample is a little bit different from the one described in the article. Indeed, the @Module@ implementations do not have a reference of the @ModuleService@ but the @ModuleService@ detects the arrival and the departure of @Module@ services (thanks to the *WhiteBoard pattern* ). This decouples the @Module@ from the @ModuleService@. Furthermore, the solution of the article lets assume that only one @ModuleService@ can be deployed in the OSGi runtime to be sure all the @Module@ register in the same @ModuleService@. This is not safe since several @ModuleService@ could be deployed in the OSGi runtime. That's why this sample prefers the WhiteBoard pattern approach.
  
-
-
