@@ -8,4 +8,4 @@ Import-Library:
  org.springframework.spring;version="${springframework.range.version}"
 Import-Template: 
  com.vaadin.*;version="${vaadin.range.version}",
- org.ws13.vaadin.osgi.dm.services.*;version="${vaadin.dm.service.version:[=.=.=,=.+1)}"
+ org.ws13.vaadin.osgi.dm.services.*;version="${vaadin.dm.service.range.version}"

@@ -29,7 +29,7 @@
 
   <properties>
     <bundle.description>${project.description}</bundle.description>
-    <vaadin.dm.service.version>0.0.1.BUILD-SNAPSHOT</vaadin.dm.service.version>
+    <vaadin.dm.service.range.version>[0,1.0)</vaadin.dm.service.range.version>
   </properties>
 
   <build>
@@ -67,7 +67,7 @@
     <dependency>
       <groupId>org.ws13.vaadin.osgi.dm</groupId>
       <artifactId>vaadin-modules-dm-service</artifactId>
-      <version>${vaadin.dm.service.version}</version>
+      <version>0.0.1.BUILD-SNAPSHOT</version>
     </dependency>
   </dependencies>
 </project>
