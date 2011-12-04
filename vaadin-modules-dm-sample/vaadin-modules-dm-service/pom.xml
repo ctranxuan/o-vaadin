@@ -18,11 +18,11 @@
   <parent>
     <artifactId>vaadin-modules-dm-sample</artifactId>
     <groupId>org.ws13.vaadin.osgi.dm</groupId>
-    <version>0.0.1</version>
+    <version>0.0.2.BUILD-SNAPSHOT</version>
   </parent>
 
   <artifactId>vaadin-modules-dm-service</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2.BUILD-SNAPSHOT</version>
   <name>Vaadin Modules Spring DM Service</name>
   <description>Vaadin Modules Spring DM Service. This bundles holds the interfaces of the api to registers Vaadin modules components.</description>
 
