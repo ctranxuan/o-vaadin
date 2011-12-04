@@ -41,9 +41,10 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <springframework.version>3.0.6.RELEASE</springframework.version>
     <vaadin.version>6.6.7</vaadin.version>
-    
-    <osgi.springframework.range.version>${springframework.version:[=.=,=.+1)}</osgi.springframework.range.version>
-    <osgi.vaadin.range.version>${vaadin.version:[0.0.0, +1)}</osgi.vaadin.range.version>
+    <javax.servlet.version>2.5</javax.servlet.version>
+    <javax.servlet.range.version>${javax.servlet.version:[=.=,+1.1)}</javax.servlet.range.version>
+    <springframework.range.version>${springframework.version:[=.=,=.+1)}</springframework.range.version>
+    <vaadin.range.version>${vaadin.version:[0.0.0, +1)}</vaadin.range.version>
   </properties>
 
   <repositories>
@@ -163,12 +164,12 @@
       <dependency>
         <groupId>com.vaadin</groupId>
         <artifactId>vaadin</artifactId>
-        <version>6.7.1</version>
+        <version>${vaadin.version}</version>
       </dependency>
       <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>servlet-api</artifactId>
-        <version>2.5</version>
+        <version>${javax.servlet.version}</version>
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>

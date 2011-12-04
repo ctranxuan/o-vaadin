@@ -5,11 +5,14 @@ Bundle-Version: ${project.version}
 Bundle-SymbolicName: ${project.groupId}.${project.artifactId}
 Bundle-Classpath: WEB-INF/classes,WEB-INF/lib
 Import-Library: 
- org.springframework.spring;version="${osgi.springframework.range.version}"
+ org.springframework.spring;version="${springframework.range.version}"
 Web-ContextPath: vaadin-modules-dm
 Spring-Context: META-INF/spring/*.xml;wait-for-dependencies:=true;publish-context:=false;
 Import-Template: 
- com.vaadin.*;version="${osgi.vaadin.range.version}"
+ org.springframework.web.context.*;version="${springframework.range.version}",
+ javax.servlet.*;version="${javax.servlet.range.version}",
+ com.vaadin.*;version="${vaadin.range.version}",
+ org.ws13.vaadin.osgi.dm.services.*;version="${vaadin.dm.service.range.version}"
 Import-Package: 
  org.eclipse.virgo.web.dm
  
