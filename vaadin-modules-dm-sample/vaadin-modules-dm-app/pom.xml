@@ -31,7 +31,6 @@
 
   <properties>
     <bundle.description>${project.description}</bundle.description>
-    <vaadin.dm.service.version>0.0.1.BUILD-SNAPSHOT</vaadin.dm.service.version>
     <vaadin.dm.service.range.version>[0,1.0)</vaadin.dm.service.range.version>
   </properties>
  
