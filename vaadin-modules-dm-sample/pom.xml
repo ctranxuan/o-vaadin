@@ -13,11 +13,12 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.ws13.vaadin.osgi.dm</groupId>
   <artifactId>vaadin-modules-dm-sample</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.1.BUILD-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Vaadin Modules Spring DM Sample</name>
   <description>Spring DM version of the Vaadin OSGi sample (https://vaadin.com/wiki/-/wiki/Main/Creating%20a%20Modular%20Vaadin%20Application%20with%20OSGi)</description>
