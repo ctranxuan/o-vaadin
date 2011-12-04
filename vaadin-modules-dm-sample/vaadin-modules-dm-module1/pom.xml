@@ -18,17 +18,17 @@
   <parent>
     <artifactId>vaadin-modules-dm-sample</artifactId>
     <groupId>org.ws13.vaadin.osgi.dm</groupId>
-    <version>0.0.2.BUILD-SNAPSHOT</version>
+    <version>0.0.1.BUILD-SNAPSHOT</version>
   </parent>
 
   <artifactId>vaadin-modules-dm-module1</artifactId>
-  <version>0.0.2.BUILD-SNAPSHOT</version>
+  <version>0.0.1.BUILD-SNAPSHOT</version>
   <name>Vaadin Modules Spring DM Module1</name>
   <description>Vaadin Modules Spring DM Module1.</description>
   
   <properties>
     <bundle.description>${project.description}</bundle.description>
-    <vaadin.dm.service.version>0.0.1</vaadin.dm.service.version>
+    <vaadin.dm.service.version>0.0.1.BUILD-SNAPSHOT</vaadin.dm.service.version>
   </properties>
 
   <build>
