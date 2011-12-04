@@ -13,17 +13,16 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <artifactId>vaadin-modules-dm-sample</artifactId>
     <groupId>org.ws13.vaadin.osgi.dm</groupId>
-    <version>0.0.1.BUILD-SNAPSHOT</version>
+    <version>0.0.1</version>
   </parent>
 
   <artifactId>vaadin-modules-dm-service</artifactId>
-  <version>0.0.1.BUILD-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>Vaadin Modules Spring DM Service</name>
   <description>Vaadin Modules Spring DM Service. This bundles holds the interfaces of the api to registers Vaadin modules components.</description>
 
