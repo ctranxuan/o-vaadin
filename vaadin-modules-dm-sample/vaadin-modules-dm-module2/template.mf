@@ -1,7 +1,7 @@
 Bundle-ManifestVersion: 2
 Bundle-Name:  ${project.name}
 Bundle-SymbolicName: ${project.groupId}.${project.artifactId}
-Bundle-Version: ${project.version}
+Bundle-Version: ${osgi.project.version}
 Bundle-Description: ${bundle.description}
 Spring-Context: META-INF/spring/*.xml;wait-for-dependencies:=true;publish-context:=false;
 Import-Library: 

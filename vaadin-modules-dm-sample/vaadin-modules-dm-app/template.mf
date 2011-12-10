@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: ${project.artifactId}
-Bundle-Version: ${project.version}
 Bundle-SymbolicName: ${project.groupId}.${project.artifactId}
+Bundle-Version: ${osgi.project.version}
 Bundle-Classpath: WEB-INF/classes,WEB-INF/lib
 Import-Library: 
  org.springframework.spring;version="${springframework.range.version}"
@@ -15,4 +15,3 @@ Import-Template:
  org.ws13.vaadin.osgi.dm.services.*;version="${vaadin.dm.service.range.version}"
 Import-Package: 
  org.eclipse.virgo.web.dm
- 
